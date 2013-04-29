@@ -11,14 +11,15 @@
 			padding: 0;
 			font-size: 12pt;
 		}
-		
+		a {
+			color: white;
+		}
+		.wrap {
+			width: 640px;
+			margin: auto;
+		}
 		#canvas {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			margin: 20px auto;
+			
 
 			border: 1px solid white;
 		}
@@ -28,6 +29,19 @@
 	<script type="text/javascript" src="lib/game/main.js"></script>
 </head>
 <body>
-	<canvas id="canvas"></canvas>
+	<div class="wrap">
+		<h1>DARKNESS</h1>
+		<h2>By <a href="http://davidr.me">LostDatagram</a></h2>
+
+		<canvas id="canvas"></canvas>
+
+		<div class="bottomtext">
+			<p>
+				Written by <A href="http://davidr.me">David Robertson</a> in 48 hours 
+				using <a href="http://impactjs.com">ImpactJS</a> for 
+				<a href="http://ludumdare.com">Ludum Dare</a> No. 26.
+			</p>
+		</div>
+	</div>
 </body>
 </html>
