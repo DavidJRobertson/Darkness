@@ -2,6 +2,13 @@
 <html>
 <head>
 	<title>Darkness by LostDatagram</title>
+	<meta name="viewport" content="width=680, scale=1, maximum-scale=1, user-scalable=0"/>
+	
+	<!-- This meta tag ensures that the toolbar at the bottom of the browser 
+		is hidden when this page is accessed frome the Home Screen. -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+
 	<style type="text/css">
 		html,body {
 			background-color: #000;
@@ -11,18 +18,40 @@
 			padding: 0;
 			font-size: 12pt;
 		}
+		* {
+			box-sizing: border-box;
+
+		}
 		a {
 			color: white;
 		}
 		.wrap {
 			width: 640px;
 			margin: auto;
+			padding: 10px;
 		}
 		#canvas {
-			
-
 			border: 1px solid white;
+			margin-top: 10px;
 		}
+
+		.button {
+			background-image: url(media/touch-buttons.png);
+			background-repeat: no-repeat;
+			width: 80px;
+			height: 96px;
+			position: absolute;
+			bottom: 0px;
+			
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-text-size-adjust: none;
+		}
+		#buttonLeft { left: 0; background-position: 0, 0; }
+		#buttonRight { left: 80px; background-position: -80px, 0; }
+		#buttonLook { right: 80px; background-position: -160px, 0; }
+		#buttonJump { right: 0px; background-position: -240px, 0; }
 	</style>
 
 	<script type="text/javascript" src="lib/impact/impact.js"></script>
@@ -34,7 +63,12 @@
 		<h2>By <a href="http://davidr.me">LostDatagram</a></h2>
 
 		<canvas id="canvas"></canvas>
-
+		<div id="touchcontrols" style="display: none;">
+			<div class="button" id="buttonLeft"></div>
+			<div class="button" id="buttonRight"></div>
+			<div class="button" id="buttonLook"></div>
+			<div class="button" id="buttonJump"></div>
+		</div>
 		<div class="bottomtext">
 			<p>
 				Written by <A href="http://davidr.me">David Robertson</a> in 48 hours 
